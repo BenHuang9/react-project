@@ -1,0 +1,59 @@
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+    li {
+        flex: 1;
+        margin-right: em(4);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+        line-height: em(40);
+        font-size: 1.5rem;
+        font-weight: bolder;
+        text-decoration: none;
+        &:hover{
+            color: $highlightColor;
+        }
+    }
+}
+
+.nav-main {
+
+
+    a {
+        &.active {
+            text-decoration: underline;
+            text-decoration-color: $featureColor;
+            text-decoration-thickness: 3px;
+ 
+
+        }
+    }
+
+    @include mq($tablet){
+        a {
+            padding: 0 em(20)
+        }
+    }
+    
+}
+
+.nav-sort {
+    li {
+        background-color: $highlightColor;
+    }
+    a {
+        font-size: 0.9em;
+        &.active {
+            background-color: darken($highlightColor, 8);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// Header
+header {
+    h1 {
+        margin: em(2) 0 em(6);
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    @include mq($tablet){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: em(12);
+        h1 {
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    @include mq($desktopWide){
+        margin: em(20);
+        h1 {
+            font-size: em(48);
+        }
+    }
+
+}
