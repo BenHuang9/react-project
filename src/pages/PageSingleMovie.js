@@ -8,21 +8,29 @@ function PageSingleMovie() {
 
     const { id } = useParams();
     const [ movie,setMovie ] = useState(null);
+    const trailerKey ="";
 
     useEffect(() => {
         const getMovie = async () => {
             const res =await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`);
             const moviesDataFromAPI = await res.json();
+            
 
-            setMovie(moviesDataFromAPI)
+            setMovie(moviesDataFromAPI);    
+            
         }
 
         getMovie();
 
     }, []);
+    if(movie){
+        const filteredArray = movie.videos.results.filter(function(itm){
+        return itm.type == "Trailer";
+    });
+    const trailerKey = filteredArray[0].key;
+    }
 
 
-console.log(movie);
     return (
         <>
         {movie !== null &&
@@ -30,7 +38,7 @@ console.log(movie);
 
                     
             <h2>{movie.title}</h2>
-            <p>{movie.release_date}</p>
+            <p>({movie.release_date.substring(0,4)})</p>
                     
         </div>
 
@@ -42,12 +50,17 @@ console.log(movie);
         </div>
         <ul class="user-score">
             <li>User score: {movie.vote_average}/10 </li>
-            <li><a href="#" data-site="YouTube" data-id="0WVDKZJkGlY" data-title="Play Trailer">Play Trailer</a></li>
+            <li><a href="#" data-site="YouTube" data-id={`${trailerKey}`} data-title="Play Trailer">Play Trailer</a></li>
         </ul>
         <div class="overview">
             <h3>Overview</h3>
             <p>{movie.overview}</p>
-        </div></>
+        </div>
+        <h3>Budget</h3>
+        <p>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie.budget)}</p>
+        <h3>Revenue</h3>
+        <p>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie.revenue)}</p>
+        </>
         }
         </>
         
