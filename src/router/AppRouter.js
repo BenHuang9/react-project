@@ -5,6 +5,7 @@ import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavs from '../pages/PageFavs';
 import { APP_FOLDER_NAME } from '../globals/globals';
+import PageSingleMovie from '../pages/PageSingleMovie';
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
               <Route path='/sort/top-rated'><PageHome sort='top_rated' /></Route>
               <Route path='/sort/now-playing'><PageHome sort='now_playing' /></Route>
               <Route path='/sort/upcoming'><PageHome sort='upcoming' /></Route>
+              <Route path='/movie/:id'><PageSingleMovie/></Route>
               <Route path='/about'><PageAbout /></Route>
               <Route path='/favs'><PageFavs /></Route>
             </Switch>
