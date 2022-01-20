@@ -15,3 +15,12 @@ h2 {
         margin: 1em 2em;
     }
 }
+::-webkit-scrollbar{
+    background-color: none;
+    height: 8px;
+    margin-bottom: 25px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba($color: #b6b6b6, $alpha: 0.5);
+    border-radius: 30px;
+}

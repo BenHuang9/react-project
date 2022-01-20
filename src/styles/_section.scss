@@ -2,3 +2,105 @@
 .favs-page {
     padding: em(20);
 }
+.single-movie-header{
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    h2{
+        margin-top: 20px;
+        font-size: 2rem;
+    }
+    .movie-info{
+        padding: 40px 40px 0 10px;
+        
+    }
+    .movie-poster{
+        margin: 30px;
+    }
+    .overview{
+        padding-top: 30px;
+    }
+    .stats{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+    ul{
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+
+
+        li{
+            margin: 15px 15px 0 15px;
+
+            &.star{
+                text-align: center;
+                font-weight: bolder;
+                div:first-child{
+                    font-size: 2rem;
+                }
+            }
+            
+            .trailer-btn{
+                align-items: center;
+                border: 1px solid #cccbcb;
+                border-radius: .375em;
+                box-shadow: none;
+                box-sizing: border-box;
+                color: #ffffff;
+                cursor: pointer;
+                display: inline-flex;
+                font-size: .75rem;
+                background-color: rgba($color: #000000, $alpha: 0.1);
+                justify-content: center;
+                line-height: 1.5;
+                text-align: center;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                vertical-align: top;
+                white-space: nowrap;
+                .triangle{
+                    width: 0;
+	                height: 0;
+	                border-top: 5px solid transparent;
+	                border-left: 10px solid whitesmoke;
+	                border-bottom: 5px solid transparent;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}
+.cast-box{
+    position: relative;
+}
+.casts{
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    
+
+    
+    .cast-card{
+        min-width: 150px;
+        background-color: rgb(66, 66, 66);
+        border-radius: 15px;
+        overflow: hidden;
+        margin:10px;
+        max-height: 270px;
+        h3{
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        
+        
+    }
+}
+#top-cast{
+    text-align: start;
+    margin: 30px;
+}

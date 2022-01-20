@@ -13,7 +13,6 @@ function MovieCard({ movie }) {
             </div>
             <div className="movie-info">
                 <h3>{movie.title}</h3>
-                {/* Not the correct location...for demo only */}
                 <Link to={`/movie/${movie.id}`}>More Info</Link>
             </div>
         </div>
