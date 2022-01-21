@@ -1,19 +1,63 @@
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
+import FavButton from '../components/FavButton';
+import {  useDispatch } from 'react-redux';
+import { addFav, deleteFav } from '../features/favs/favsSlice';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, isFav }) {
+    
+    const [movieFav, setMovieFav] = useState(isFav);
+
+
+    const favs = useSelector((state) => state.favs.items);
+
+    useEffect(() => {
+        if(isFav !== true){
+            
+            //const isLargeNumber = (element) => element > 13;
+            const indexOfFoundMovie = favs.findIndex(item => item.id === movie.id);
+
+            if(indexOfFoundMovie !== -1){
+                setMovieFav(true);
+            }
+
+        }
+    }, [])
+
+    const dispatch = useDispatch();
+
+    function handleFavClick(addToFav, movie){
+        if(addToFav === true){
+            dispatch(addFav(movie));
+            setMovieFav(true);
+            
+        }else{
+            dispatch(deleteFav(movie));
+            setMovieFav(false);
+        }   
+    }
+
     return (
         <div className="movie-card">
             <div className="movie-poster">
                 {movie.poster_path === null ? 
                     <img src={noPoster} alt="No poster available." /> : 
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                }
-                
+                }    
             </div>
             <div className="movie-info">
                 <h3>{movie.title}</h3>
-                <Link to={`/movie/${movie.id}`}>More Info</Link>
+                {/* Not the correct location...for demo only */}
+                
+                <Link to={`/movie/${movie.id}` }>More Info</Link>
+                <div className="btn-favourite">
+                {movieFav ? 
+                    <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> : 
+                    <FavButton movie={movie} handleFavClick={handleFavClick} />
+                }
+            </div>
             </div>
         </div>
     )
