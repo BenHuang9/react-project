@@ -14,18 +14,19 @@
 
     @include mq($desktop){
         padding: em(20);
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: em(18);
     }
 
 }
 
 .movie-card {
+    position: relative;
     background-color: rgba(black, 0.3);
-    border: em(3) solid $textColor;
+    border: em(1) solid $textColor;
     padding: em(10);
     margin-bottom: em(16);
-    border-radius: em(8);
+    border-radius: em(5);
 
     img {
         width: 100%;
@@ -35,4 +36,9 @@
     @include mq($tablet){
         margin-bottom: 0;
     }
+}
+
+.rate-date{
+    display: flex;
+    justify-content: space-between;
 }

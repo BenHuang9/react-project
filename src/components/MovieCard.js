@@ -49,8 +49,11 @@ function MovieCard({ movie, isFav }) {
             </div>
             <div className="movie-info">
                 <h3>{movie.title}</h3>
-                {/* Not the correct location...for demo only */}
-                
+                    <div class="rate-date">
+                        <p>⭐{movie.vote_average}</p>
+                        <p> {movie.release_date}</p>
+
+                    </div>
                 <Link to={`/movie/${movie.id}` }>More Info</Link>
                 <div className="btn-favourite">
                 {movieFav ? 

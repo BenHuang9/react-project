@@ -1,3 +1,12 @@
+button.fav-btn{
+    position: absolute;
+            width: 35px;
+            top: 20px;
+            right: 15px;
+            background-color: rgba($color: #000000, $alpha: 0);
+            border: none;
+            border-radius: 50%;
+}
 .popup{
     width: 100%;
     position: fixed;

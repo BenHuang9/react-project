@@ -1,3 +1,5 @@
+import fav from "../images/favorite.svg";
+import unfav from "../images/unfavorite.svg";
 function FavButton({ movie, remove, handleFavClick }) {
 
     function handleAddFav(){
@@ -12,8 +14,8 @@ function FavButton({ movie, remove, handleFavClick }) {
     return (
         <>
             {remove === false ? 
-            <button onClick={handleAddFav}>Add To Favs</button> : 
-            <button onClick={handleRemoveFav}>Remove From Favs</button>}
+            <button class = "fav-btn" onClick={handleAddFav}><img src = {unfav}/></button> : 
+            <button class = "fav-btn" onClick={handleRemoveFav}><img src = {fav}/></button>}
         </>
     );
     

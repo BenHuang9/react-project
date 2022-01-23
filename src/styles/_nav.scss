@@ -1,4 +1,7 @@
 nav {
+    width: 70%;
+    min-width: 338px;
+    
     ul {
         margin: 0;
         padding: 0;
@@ -8,15 +11,21 @@ nav {
     li {
         flex: 1;
         margin-right: em(4);
+        &:first-child{
+            border-radius: 20px 0 0 20px ;
+        }
+        
         &:last-child {
             margin-right: 0;
+            border-radius: 0 20px 20px 0;
         }
     }
-    a {
+    a { 
+        font-family: $navFont;
         display: block;
         text-align: center;
         line-height: em(40);
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: bolder;
         text-decoration: none;
         &:hover{
@@ -27,8 +36,11 @@ nav {
 
 .nav-main {
 
-
+    li{
+        max-width: 10em;
+    }
     a {
+        
         &.active {
             text-decoration: underline;
             text-decoration-color: $featureColor;
@@ -47,11 +59,15 @@ nav {
 }
 
 .nav-sort {
+    margin-left: auto;
+    margin-right: auto;
+    
     li {
-        background-color: $highlightColor;
+        background-color: rgb(19, 19, 19);
     }
     a {
-        font-size: 0.9em;
+        font-weight:300;
+        font-size: 0.7rem;
         &.active {
             background-color: darken($highlightColor, 8);
         }

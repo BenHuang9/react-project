@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { API_KEY} from '../globals/globals';
 import noPoster from '../images/no-movie-poster.jpg';
 import Popup from '../components/Popup';
+import Cast from '../components/Cast';
+import tag from '../images/tag.svg';
+
 
 
 function PageSingleMovie() {
@@ -57,8 +60,13 @@ function PageSingleMovie() {
             
             <div >                   
                 <h2>{movie.title} ({movie.release_date.substring(0,4)})</h2>
-                <ul class="user-score">
+                <div class = 'tags'>
+                <embed src={tag}/>
+                    {movie.genres.map(tag => <div class = "tag"> {tag.name}</div>)}
                     
+                </div>
+                
+                <ul class="user-score">    
                     <li class="star"> 
                         <div>⭐</div>
                         <div>{movie.vote_average}/10 </div>
@@ -103,46 +111,9 @@ function PageSingleMovie() {
         <h2 id = "top-cast">Top Billed Casts</h2>
         <section class = "casts-box">
             <div class = "casts">
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[0].profile_path}`} alt={movie.credits.cast[0].name} />
-                <h3>{`${movie.credits.cast[0].name}`}</h3>
-                <p>{`${movie.credits.cast[0].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[1].profile_path}`} alt={movie.credits.cast[1].name} />
-                <h3>{`${movie.credits.cast[1].name}`}</h3>
-                <p>{`${movie.credits.cast[1].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[2].profile_path}`} alt={movie.credits.cast[2].name} />
-                <h3>{`${movie.credits.cast[2].name}`}</h3>
-                <p>{`${movie.credits.cast[2].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[3].profile_path}`} alt={movie.credits.cast[3].name} />
-                <h3>{`${movie.credits.cast[3].name}`}</h3>
-                <p>{`${movie.credits.cast[3].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[4].profile_path}`} alt={movie.credits.cast[4].name} />
-                <h3>{`${movie.credits.cast[4].name}`}</h3>
-                <p>{`${movie.credits.cast[4].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[5].profile_path}`} alt={movie.credits.cast[5].name} />
-                <h3>{`${movie.credits.cast[5].name}`}</h3>
-                <p>{`${movie.credits.cast[5].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[6].profile_path}`} alt={movie.credits.cast[6].name} />
-                <h3>{`${movie.credits.cast[6].name}`}</h3>
-                <p>{`${movie.credits.cast[6].character}`}</p>
-            </div>
-            <div class = "cast-card">
-                <img src={`https://www.themoviedb.org/t/p/w276_and_h350_face/${movie.credits.cast[7].profile_path}`} alt={movie.credits.cast[7].name} />
-                <h3>{`${movie.credits.cast[7].name}`}</h3>
-                <p>{`${movie.credits.cast[7].character}`}</p>
-            </div>
+
+                <Cast movie={movie}/>
+
             </div>
         </section>
         </>
