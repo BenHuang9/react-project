@@ -47,20 +47,24 @@ function MovieCard({ movie, isFav }) {
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                 }    
             </div>
+            <h3>{movie.title}</h3>
+                <div class="rate-date">
+                    <p>⭐{movie.vote_average}</p>
+                    <p> {movie.release_date}</p>
+                </div>
             <div className="movie-info">
-                <h3>{movie.title}</h3>
-                    <div class="rate-date">
-                        <p>⭐{movie.vote_average}</p>
-                        <p> {movie.release_date}</p>
-
-                    </div>
-                <Link to={`/movie/${movie.id}` }>More Info</Link>
-                <div className="btn-favourite">
+                <div className="overview">
+                        <p>{movie.overview}</p>
+                </div>
+                <div className="more-info">
+                    <Link to={`/movie/${movie.id}` }>More Info</Link>
+                </div>
+            </div>
+            <div className="btn-favourite">
                 {movieFav ? 
                     <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> : 
                     <FavButton movie={movie} handleFavClick={handleFavClick} />
                 }
-            </div>
             </div>
         </div>
     )
