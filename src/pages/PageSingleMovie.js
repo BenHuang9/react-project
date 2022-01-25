@@ -1,10 +1,22 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { API_KEY} from '../globals/globals';
+import { API_KEY, appStorageName} from '../globals/globals';
 import noPoster from '../images/no-movie-poster.jpg';
 import Popup from '../components/Popup';
 import Cast from '../components/Cast';
 import tag from '../images/tag.svg';
+import fav from "../images/favorite.svg";
+import unfav from "../images/unfavorite.svg";
+
+function getFavs(){
+    let favsFromStorage = localStorage.getItem(appStorageName);
+    if(favsFromStorage === null){
+        favsFromStorage = [];
+    }else{
+        favsFromStorage = JSON.parse(favsFromStorage);
+    }
+    return favsFromStorage;
+  }
 
 
 
@@ -13,8 +25,10 @@ function PageSingleMovie() {
     const { id } = useParams();
     const [ movie,setMovie ] = useState(null);
     const [ playTrailer,setPlayTrailer ] = useState(false);
+    const [movieFav, setMovieFav] = useState(false)
     let trailerKey = "";
     let movieDirector = "";
+
 
     useEffect(() => {
         const getMovie = async () => {
@@ -22,7 +36,14 @@ function PageSingleMovie() {
             const moviesDataFromAPI = await res.json();
             
 
-            setMovie(moviesDataFromAPI);    
+            setMovie(moviesDataFromAPI); 
+            
+            const favs = getFavs();
+            const indexOfFoundMovie = favs.findIndex(item => item.id === moviesDataFromAPI.id);
+
+            if(indexOfFoundMovie !== -1){
+                setMovieFav(true);
+            }
             
         }
 
@@ -30,6 +51,9 @@ function PageSingleMovie() {
     
 
     }, []);
+
+
+
     if(movie){
         const filteredArray = movie.videos.results.filter(function(itm){
         return itm.type === "Trailer";
@@ -74,6 +98,13 @@ function PageSingleMovie() {
                     </li>
                     <li>{movie.release_date} ({movie.production_countries[0].iso_3166_1})</li>
                     <li><button class = "trailer-btn" onClick = {()=> setPlayTrailer(true)}><span class = "triangle"> </span>Trailer</button></li>
+                     
+                    {movieFav ? 
+                    <li><p>Favourite</p><img src={fav}/></li>: 
+                    <li></li>
+                    }
+
+                    
                     
                 </ul>
             <Popup trigger={playTrailer} setTrigger={setPlayTrailer}>
@@ -124,5 +155,5 @@ function PageSingleMovie() {
 }
 
 
-export default PageSingleMovie
+export default PageSingleMovie;
 

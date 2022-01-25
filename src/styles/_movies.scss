@@ -1,6 +1,6 @@
 // Movies
 .movie-poster{
-    max-width: 100%;
+    max-width: 300px;
     height: auto;
     position: relative;
 }
@@ -42,6 +42,7 @@
     }
 
     .movie-info {
+        border-radius: 5px;
         position: absolute;
         padding: 10rem 5rem 0 5rem;
         top: 0;
@@ -62,12 +63,13 @@
     }
     .movie-info .overview {
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
     }
     .more-info {
+        font-family: $navFont;
         text-align: center;
         margin-top: 5rem;
     }

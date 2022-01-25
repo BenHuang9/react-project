@@ -1,6 +1,8 @@
 import Movies from '../components/Movies';
+import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+
 
 
 function PageFavs() {
@@ -13,15 +15,10 @@ function PageFavs() {
         </section>
 
         <section className="fav-list">
-        {favs == null?
-            
-            <Movies moviesData={favs} isFav={true}/>:
-            <><p>You don't have any favourite movie yet. You can simply click the heart button to add movie to my favourite list.  </p>
-            <p><a href='/PageHome.js'>click here</a> to go back to home page.</p>
-            </>
-             
 
-        }
+        {favs.length < 1 ?
+        <><p>You dont have any favourite muvie yet.</p><p>Return to the <NavLink to='/' exact> Movies</NavLink> page to add some.</p></>:
+        <Movies moviesData={favs} isFav={true}/>}
         </section>
         
 

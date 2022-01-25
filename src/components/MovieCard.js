@@ -16,7 +16,6 @@ function MovieCard({ movie, isFav }) {
     useEffect(() => {
         if(isFav !== true){
             
-            //const isLargeNumber = (element) => element > 13;
             const indexOfFoundMovie = favs.findIndex(item => item.id === movie.id);
 
             if(indexOfFoundMovie !== -1){
@@ -71,3 +70,4 @@ function MovieCard({ movie, isFav }) {
 }
 
 export default MovieCard; 
+
