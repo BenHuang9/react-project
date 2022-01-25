@@ -1,6 +1,6 @@
 // Movies
 .movie-poster{
-    max-width: 300px;
+    max-width: 420px;
     height: auto;
     position: relative;
 }
@@ -44,7 +44,7 @@
     .movie-info {
         border-radius: 5px;
         position: absolute;
-        padding: 10rem 5rem 0 5rem;
+        padding: 10rem 2rem 0 2rem;
         top: 0;
         left: 0;
         width: 100%;
@@ -56,12 +56,13 @@
         align-items: left;
         opacity: 0;
         transition: opacity 0.25s;
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     .movie-info:hover {
         opacity: 1;
     }
     .movie-info .overview {
+        text-align: center;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;

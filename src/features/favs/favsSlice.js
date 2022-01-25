@@ -25,7 +25,7 @@ export const favsSlice = createSlice({
   reducers: {
     addFav: (state, action) => {
 
-        console.log(action.payload);
+      
 
       const newFavs = [...state.items, action.payload];
       localStorage.setItem(appStorageName, JSON.stringify(newFavs));

@@ -6,8 +6,8 @@ import Popup from '../components/Popup';
 import Cast from '../components/Cast';
 import tag from '../images/tag.svg';
 import fav from "../images/favorite.svg";
-import unfav from "../images/unfavorite.svg";
 
+//if the fav movie in storage is null set the list to be empty array else do a super list of stringify objets//
 function getFavs(){
     let favsFromStorage = localStorage.getItem(appStorageName);
     if(favsFromStorage === null){
@@ -37,8 +37,8 @@ function PageSingleMovie() {
             
 
             setMovie(moviesDataFromAPI); 
-            
-            const favs = getFavs();
+            // search the local storage and check if there is an stored fav movie have the same id as current movie, if yes get the index of that item (should be only 0 if faved or -1 is not fav)//
+            const favs = getFavs();// why is it possible to sign a constant to be a function ?//
             const indexOfFoundMovie = favs.findIndex(item => item.id === moviesDataFromAPI.id);
 
             if(indexOfFoundMovie !== -1){
@@ -101,7 +101,7 @@ function PageSingleMovie() {
                      
                     {movieFav ? 
                     <li><p>Favourite</p><img src={fav}/></li>: 
-                    <li></li>
+                    <p/> 
                     }
 
                     

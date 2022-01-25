@@ -1,0 +1,56 @@
+@include mq($desktop){
+.fav-list{
+    padding:3.5em;
+    p{
+    text-align: center;
+    font-size: 1rem;
+    }
+    .movies-container{
+        display: block;
+        h3{
+            position: absolute;
+            top:15px;
+            left: 140px;
+            margin-left: 2.5rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        .movie-card{
+            margin-bottom: 0.5em;
+            .movie-poster{
+                img{
+                max-width: 130px;
+                min-width: 130px;
+                }
+            }
+            
+            button{
+                left:15px;
+            }
+            .movie-info{
+                justify-content: space-between;
+                opacity: 1;
+                width: 80%;
+                right:0;
+                background-color: rgba(255, 255, 255, 0);
+                left:150px;
+                padding-bottom: 3rem;
+                .overview{
+                    -webkit-line-clamp: 4;
+                    p{
+                            text-align:start;
+                    }
+                        
+                }
+                .more-info{
+                    text-align: left;
+                    margin-top: 1rem;
+
+                }
+            
+            }
+        }
+        
+    }
+}
+}

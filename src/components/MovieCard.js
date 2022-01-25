@@ -11,7 +11,7 @@ function MovieCard({ movie, isFav }) {
     const [movieFav, setMovieFav] = useState(isFav);
 
 
-    const favs = useSelector((state) => state.favs.items);
+    const favs = useSelector((state) => state.favs.items);// what is this? never seen before//
 
     useEffect(() => {
         if(isFav !== true){
