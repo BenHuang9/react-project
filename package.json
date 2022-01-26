@@ -1,7 +1,7 @@
 {
   "name": "movie-mainia",
   "version": "0.1.0",
-  "homepage": "/movie-mania",
+  "homepage": "/react-project",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
