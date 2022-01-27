@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import NavMain from './NavMain';
-import logo from '../images/logo.png'
+import logo from '../images/logo.png';
 import { useState, useEffect } from 'react';
 
 function Header() {

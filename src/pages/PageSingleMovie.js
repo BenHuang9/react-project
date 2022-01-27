@@ -73,7 +73,7 @@ function PageSingleMovie() {
         <>
         {movie !== null &&
         <>
-        <section class="single-movie-header">
+        <section className="single-movie-header">
 
             <div className="movie-poster">
                 {movie.poster_path == null ?
@@ -84,20 +84,20 @@ function PageSingleMovie() {
             
             <div >                   
                 <h2>{movie.title} ({movie.release_date.substring(0,4)})</h2>
-                <div class = 'tags'>
+                <div className = 'tags'>
                 <embed src={tag}/>
-                    {movie.genres.map(tag => <div class = "tag"> {tag.name}</div>)}
+                    {movie.genres.map(tag => <div className = "tag"> {tag.name}</div>)}
                     
                 </div>
                 
-                <ul class="user-score">    
-                    <li class="star"> 
+                <ul className="user-score">    
+                    <li className="star"> 
                         <div>⭐</div>
                         <div>{movie.vote_average}/10 </div>
 
                     </li>
                     <li>{movie.release_date} ({movie.production_countries[0].iso_3166_1})</li>
-                    <li><button class = "trailer-btn" onClick = {()=> setPlayTrailer(true)}><span class = "triangle"> </span>Trailer</button></li>
+                    <li><button className = "trailer-btn" onClick = {()=> setPlayTrailer(true)}><span className = "triangle"> </span>Trailer</button></li>
                      
                     {movieFav ? 
                     <li><p>Favourite</p><img src={fav}/></li>: 
@@ -112,12 +112,12 @@ function PageSingleMovie() {
             </Popup>
                     
             
-            <section class = "movie-info">
-                <div class="overview">
+            <section className = "movie-info">
+                <div className="overview">
                     <h3>Overview</h3>
                     <p>{movie.overview}</p>
                 </div>
-                <div class="stats">
+                <div className="stats">
                     <div>
                         <h3>Director</h3>
                         <p>{`${movieDirector}`}</p> 
@@ -140,8 +140,8 @@ function PageSingleMovie() {
         </section>
 
         <h2 id = "top-cast">Top Billed Casts</h2>
-        <section class = "casts-box">
-            <div class = "casts">
+        <section className = "casts-box">
+            <div className = "casts">
 
                 <Cast movie={movie}/>
 

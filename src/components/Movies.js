@@ -17,4 +17,4 @@ function Movies({ moviesData , isFav }) {
     )
 }
 
-export default Movies 
+export default Movies;

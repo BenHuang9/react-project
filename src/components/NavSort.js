@@ -21,4 +21,4 @@ function NavSort() {
     )
 }
 
-export default NavSort
+export default NavSort;

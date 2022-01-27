@@ -2,7 +2,7 @@ import React from "react";
 
 function Popup(props){
     return (props.trigger) ? (
-        <div class = "popup">
+        <div className = "popup">
             
             <div>
                 <button onClick={() => props.setTrigger(false)}>X</button>
@@ -13,4 +13,4 @@ function Popup(props){
     ) : ""; 
 }
 
-export default Popup
+export default Popup;

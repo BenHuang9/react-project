@@ -47,7 +47,7 @@ function MovieCard({ movie, isFav }) {
                 }    
             </div>
             <h3>{movie.title}</h3>
-                <div class="rate-date">
+                <div className="rate-date">
                     <p>⭐{movie.vote_average}</p>
                     <p> {movie.release_date}</p>
                 </div>
