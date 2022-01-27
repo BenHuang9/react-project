@@ -1,8 +1,15 @@
 import { NavLink } from 'react-router-dom';
 
-function NavMain() {
+function NavMain( {handleShowHideNav} ) {
+    function closeNav(e){
+        if(window.innerWidth < 600){
+            handleShowHideNav();
+        }else{
+            e.target.blur();
+        }
+    }
     return (
-        <nav className="nav-main">
+        <nav className="main-nav" onClick={closeNav}>
             <ul>
                 <li>
                     <NavLink to='/' exact>Movies</NavLink>
@@ -19,4 +26,4 @@ function NavMain() {
     )
 }
 
-export default NavMain
+export default NavMain;

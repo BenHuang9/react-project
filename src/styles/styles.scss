@@ -10,9 +10,10 @@ font-family: 'Sarabun', sans-serif;
 */
 
 // Utilities
-@import './functions';
-@import './variables';
+@import './utilities/functions';
+@import './utilities/utility-classes';
 @import './mixins';
+@import './variables';
 
 // Resets
 @import 'reset';
@@ -23,9 +24,13 @@ font-family: 'Sarabun', sans-serif;
 @import 'wrapper';
 @import 'header';
 @import 'nav';
+@import 'main-nav';
+@import 'btn-main-nav';
 @import 'movies';
 @import 'section';
 @import 'footer';
 @import 'popup';
 @import 'fav';
 @import 'about';
+
+

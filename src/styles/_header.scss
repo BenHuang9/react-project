@@ -1,5 +1,13 @@
 // Header
 header {
+    
+    padding: 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+
     h1 {
         margin: em(2) 0 em(6);
         text-align: center;
@@ -9,7 +17,7 @@ header {
     }
 
     .logo {
-        width: 90px;
+        width: 120px;
         padding-top: 15px;
     }
     @include mq($tablet){
@@ -24,7 +32,13 @@ header {
     }
 
     @include mq($desktopWide){
-        margin: em(20);
+        padding-left: 3rem;
+        width: 100%;
+        .logo {
+            width: 110px;
+            padding-top: 15px;
+        }
+        // margin: em(20);
         h1 {
             font-size: em(48);
         }

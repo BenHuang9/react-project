@@ -1,4 +1,4 @@
-nav {
+.nav-sort {
     width: 70%;
     min-width: 338px;
     
@@ -32,30 +32,6 @@ nav {
             color: $highlightColor;
         }
     }
-}
-
-.nav-main {
-
-    li{
-        max-width: 10em;
-    }
-    a {
-        
-        &.active {
-            text-decoration: underline;
-            text-decoration-color: $featureColor;
-            text-decoration-thickness: 3px;
- 
-
-        }
-    }
-
-    @include mq($tablet){
-        a {
-            padding: 0 em(20)
-        }
-    }
-    
 }
 
 .nav-sort {
