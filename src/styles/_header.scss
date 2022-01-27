@@ -1,7 +1,7 @@
 // Header
 header {
     
-    padding: 0 3rem;
+    // padding: 0 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -17,14 +17,15 @@ header {
     }
 
     .logo {
-        width: 120px;
+        width: 160px;
         padding-top: 15px;
+        padding-left: 2rem;
     }
     @include mq($tablet){
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: em(12);
+        // width: 90%;
+        
+       
         h1 {
             margin: 0;
             text-align: left;
@@ -32,10 +33,9 @@ header {
     }
 
     @include mq($desktopWide){
-        padding-left: 3rem;
-        width: 100%;
+        padding-left: 4rem;
+        width: 90%;
         .logo {
-            width: 110px;
             padding-top: 15px;
         }
         // margin: em(20);

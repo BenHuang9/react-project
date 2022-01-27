@@ -12,7 +12,7 @@
     overflow: hidden;
     visibility: hidden;
     transition: height 0.5s ease, visibility 0s 0.5s;
-
+    
     a {
                 color: #fcfcfc;
                 text-decoration: none;
@@ -43,6 +43,7 @@
 
     ul {
         @include flatten($is-list: true);
+        text-align: center;
     }
     a {
         color: $light;
@@ -62,12 +63,13 @@
         }
     }
 
-    @media (min-width: em(600)){
-        width: 80%;
+    @media (min-width: em(661)){
+        width: 70%;
         height: auto;
         visibility: visible;
         transition: none;
-        margin-left: 3rem;
+        margin-right: 2rem;
+
 
         .show & {
             transition: none;
@@ -76,6 +78,7 @@
         
         ul {
             display: flex;
+           
         }
 
         li {
@@ -86,6 +89,7 @@
             padding: 0;
             text-align: center;
             border-top:  none;
+            line-height: 35px;
             @at-root .main-nav li:not(:first-child) a {
                 border-top: none;
                 border-left: 3px solid $grey;

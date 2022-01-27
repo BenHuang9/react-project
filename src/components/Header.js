@@ -25,10 +25,10 @@ function Header() {
     }, []);
     return (
         <header className={navOpen ? 'show' : undefined}>
-            <h1><Link to='/'>
+            <Link to='/'>
                 <img src={logo} alt="Logo" className='logo'/>
-                </Link>
-            </h1>
+            </Link>
+            
             <button className="btn-main-nav" 
                     onMouseDown={(e) => { e.preventDefault(); }}
                     onClick={showHideNav}>
