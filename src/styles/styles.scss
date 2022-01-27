@@ -12,25 +12,25 @@ font-family: 'Sarabun', sans-serif;
 // Utilities
 @import './utilities/functions';
 @import './utilities/utility-classes';
-@import './mixins';
-@import './variables';
+@import './utilities/mixins';
+@import './utilities/variables';
 
 // Resets
-@import 'reset';
-@import 'type';
+@import './base/reset';
+@import './base/type';
 
 // Components
-@import 'body';
-@import 'wrapper';
-@import 'header';
-@import 'nav';
-@import 'main-nav';
-@import 'btn-main-nav';
-@import 'movies';
-@import 'section';
-@import 'footer';
-@import 'popup';
-@import 'fav';
-@import 'about';
+@import './component/body';
+@import './component/wrapper';
+@import './component/header';
+@import './component/nav';
+@import './component/main-nav';
+@import './component/btn-main-nav';
+@import './component/movies';
+@import './component/section';
+@import './component/footer';
+@import './component/popup';
+@import './component/fav';
+@import './component/about';
 
 

@@ -1,12 +1,8 @@
 // Button Main Nav Styles
 
-@use './base/settings' as *;
-@use './utilities/functions' as *;
-@use './utilities/mixins' as *;
-
-// Hamburger icon styles modified from
-// the following codepen:
-// https://codepen.io/RRoberts/pen/ZBYaJr
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 
 .btn-main-nav {
 

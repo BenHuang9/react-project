@@ -1,20 +1,28 @@
 // Type
 
-@use 'settings' as *;
+@use './settings' as *;
+
+/* 
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Sarabun', sans-serif;
+
+*/
 
 body {
-    font-family: $bodyFont;
-    color: $dark;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4 {
-    font-family: $headingFont;
+h1, h2, h3, nav a {
+    font-family: 'Sarabun', sans-serif;
 }
 
-h1, h2, h3, h4, p {
-    margin-top: 0;
+h1 {
+    font-weight: 800;
+    font-style: italic;
 }
 
-p {
-    line-height: 1.4;
+a {
+    color: white;
 }
+

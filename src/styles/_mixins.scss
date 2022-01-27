@@ -1,8 +1,0 @@
-// Mixins
-
-// Media Queries
-@mixin mq($w){
-    @media(min-width: em($w)){
-        @content;
-    }
-}
