@@ -7,7 +7,7 @@
 .main-nav {
 
     width: 100%;
-    background-color: $dark;
+
     height: 0;
     overflow: hidden;
     visibility: hidden;
@@ -44,6 +44,7 @@
     ul {
         @include flatten($is-list: true);
         text-align: center;
+        background-color: $dark;
     }
     a {
         color: $light;
@@ -53,9 +54,6 @@
         font-size: 1.3em;
         font-weight: bold;
         padding: 0 12px;
-        @at-root .main-nav li:not(:first-child) a {
-            border-top: 1px solid $grey;
-        }
         &:hover,
         &:focus,
         &:active {
@@ -70,7 +68,6 @@
         transition: none;
         margin-right: 2rem;
 
-
         .show & {
             transition: none;
             height: auto;
@@ -78,6 +75,7 @@
         
         ul {
             display: flex;
+            background-color: rgba(white, 0);
            
         }
 
@@ -90,9 +88,15 @@
             text-align: center;
             border-top:  none;
             line-height: 35px;
+            
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: rgba(white, 0);
+    
+            }
             @at-root .main-nav li:not(:first-child) a {
-                border-top: none;
-                border-left: 3px solid $grey;
+                border: none;;
             }
         }
 

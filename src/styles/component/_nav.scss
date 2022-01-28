@@ -46,7 +46,7 @@
         font-weight:300;
         font-size: 0.7rem;
         &.active {
-            background-color: darken($highlightColor, 8);
+            color: darken($highlightColor, 8);
         }
     }
 }
