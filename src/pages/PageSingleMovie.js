@@ -25,10 +25,9 @@ function PageSingleMovie() {
     const { id } = useParams();
     const [ movie,setMovie ] = useState(null);
     const [ playTrailer,setPlayTrailer ] = useState(false);
-    const [movieFav, setMovieFav] = useState(false)
+    const [ movieFav, setMovieFav ] = useState(false)
     let trailerKey = "";
     let movieDirector = "";
-
 
     useEffect(() => {
         const getMovie = async () => {
@@ -86,7 +85,7 @@ function PageSingleMovie() {
                 <h2>{movie.title} ({movie.release_date.substring(0,4)})</h2>
                 <div className = 'tags'>
                 <embed src={tag}/>
-                    {movie.genres.map(tag => <div className = "tag"> {tag.name}</div>)}
+                    key={movie.genres.map(tag => <div className = "tag"> {tag.name}</div>)}
                     
                 </div>
                 
