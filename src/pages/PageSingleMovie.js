@@ -76,8 +76,8 @@ function PageSingleMovie() {
 
             <div className="movie-poster">
                 {movie.poster_path == null ?
-                    <img src={noPoster} alt="No poster available." /> :
-                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
+                    <img key = {movie.id} src={noPoster} alt="No poster available." /> :
+                    <img key = {movie.id} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
                 
             </div>
             
