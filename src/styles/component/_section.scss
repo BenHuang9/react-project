@@ -5,7 +5,7 @@
 
 .single-movie-header{
     background-color: rgb(20, 20, 20);
-    display: flex;
+    
     h2{
         margin-top: 20px;
         font-size: 2rem;
@@ -15,7 +15,9 @@
         
     }
     .movie-poster{
-        margin: 30px;
+        max-width: 300px;
+        margin: auto ;
+        padding-top: 30px;
     }
     .overview{
         padding-top: 30px;
@@ -42,6 +44,7 @@
                 }
             }
             &:last-child{
+                min-width: 105px;
                 display: flex;
                 padding: 2px 5px;
                 border: solid 1px $textColor ;
@@ -85,6 +88,16 @@
                     margin-right: 2px;
                 }
             }
+        }
+    }
+}
+@media(min-width: em(800)){
+    .single-movie-header{
+        display: flex;
+        .movie-poster{
+            
+            margin: 30px;
+           
         }
     }
 }

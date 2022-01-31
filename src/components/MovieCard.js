@@ -10,9 +10,8 @@ function MovieCard({ movie, isFav }) {
     
     const [movieFav, setMovieFav] = useState(isFav);
 
-
     const favs = useSelector((state) => state.favs.items);// what is this? never seen before//
-
+    
     useEffect(() => {
         if(isFav !== true){
             
@@ -23,7 +22,8 @@ function MovieCard({ movie, isFav }) {
             }
 
         }
-    }, [])
+
+    }, [isFav, favs, movie.id]) 
 
     const dispatch = useDispatch();
 
@@ -42,8 +42,8 @@ function MovieCard({ movie, isFav }) {
         <div className="movie-card">
             <div className="movie-poster">
                 {movie.poster_path === null ? 
-                    <img src={noPoster} alt="No poster available." /> : 
-                    <img key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <img src = {noPoster} alt = "No poster available." /> : 
+                    <img key={movie.id} src = {`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt = {movie.title} />
                 }    
             </div>
             <h3>{movie.title}</h3>

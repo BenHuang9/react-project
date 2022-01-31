@@ -29,6 +29,8 @@ function PageSingleMovie() {
     let trailerKey = "";
     let movieDirector = "";
 
+    
+
     useEffect(() => {
         const getMovie = async () => {
             const res =await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos,credits`);
@@ -49,7 +51,7 @@ function PageSingleMovie() {
         getMovie();
     
 
-    }, []);
+    }, [id]);
 
 
 
@@ -76,16 +78,16 @@ function PageSingleMovie() {
 
             <div className="movie-poster">
                 {movie.poster_path == null ?
-                    <img key = {movie.id} src={noPoster} alt="No poster available." /> :
-                    <img key = {movie.id} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />}
+                    <img src = {noPoster} alt="No poster available." /> :
+                    <img src = {`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt = {movie.title} />}
                 
             </div>
             
             <div >                   
                 <h2>{movie.title} ({movie.release_date.substring(0,4)})</h2>
                 <div className = 'tags'>
-                <embed src={tag}/>
-                    key={movie.genres.map(tag => <div className = "tag"> {tag.name}</div>)}
+                <embed src={tag} />
+                    {movie.genres.map((tag, i) => <div key={i} className = "tag"> {tag.name}</div>)}
                     
                 </div>
                 
@@ -99,7 +101,7 @@ function PageSingleMovie() {
                     <li><button className = "trailer-btn" onClick = {()=> setPlayTrailer(true)}><span className = "triangle"> </span>Trailer</button></li>
                      
                     {movieFav ? 
-                    <li><p>Favourite</p><img src={fav}/></li>: 
+                    <li><p>Favourite</p><img src={fav} alt ="A hollow heart"/></li>: 
                     <p/> 
                     }
 
